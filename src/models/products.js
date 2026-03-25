@@ -11,9 +11,9 @@ const productSchema = new Schema(
         price:{
             type: Number,
         },
-        inStock:{
-            type: Boolean,
-        },
+        weight:{
+            type: Number,
+        }
     },
     {versionKey: false, timestamps: true},
 );

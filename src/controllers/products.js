@@ -1,4 +1,4 @@
-// import productModel from '../controllers/products.js';
+import productModel from '../controllers/products.js';
 
 const productsController = {
     create: async (req,res)=>{
@@ -8,7 +8,7 @@ const productsController = {
                     name,
                     category,
                     price,
-                    instock,
+                    weight,
                 });
                 await newProduct.save();
                 res.status(201).json({message: 'Producto Creado'});
@@ -42,12 +42,12 @@ const productsController = {
     update: async(req,res)=>{
         try{
             const {id} = req.params;
-            const {name, category, price, instock} = req.body;
+            const {name, category, price, weight} = req.body;
             const productUpdate = await productModel.findByIdAndUpdate(id,{
                 name,
                 category,
                 price,
-                instock
+                weight
             })
             if(!productUpdate){
                 res.status(404).json('Producto no encontrado')
