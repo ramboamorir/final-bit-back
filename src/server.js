@@ -1,6 +1,7 @@
 // Importar librerias y conexiones
 import express from "express";
 import 'dotenv/config';
+import cors from 'cors';
 import connectDB from "./config/db.js";
 import dns from 'node:dns';
 import productsRouter from "./routers/products.js";
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
 connectDB();
 
 // Llamando los metodos de producción
+server.use(cors());
 server.use(express.json());
 server.use('/productos', productsRouter);
 
