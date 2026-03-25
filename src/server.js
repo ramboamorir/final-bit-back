@@ -18,8 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
 connectDB();
 
 // Llamando los metodos de producción
-// server.use(express.json());
-// server.use('/productos', productsRouter)
+server.use(express.json());
+server.use('/productos', productsRouter);
 
 // Metodos para identificar rutas de respuesta
 server.get('/',(req,res)=>{
