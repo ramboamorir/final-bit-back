@@ -8,12 +8,12 @@ const productSchema = new Schema(
         category:{
             type: String,
         },
+        description:{
+            type: String,
+        },
         price:{
             type: Number,
         },
-        weight:{
-            type: Number,
-        }
     },
     {versionKey: false, timestamps: true},
 );
