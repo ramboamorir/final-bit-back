@@ -2,9 +2,7 @@
 import express from "express";
 import 'dotenv/config';
 import connectDB from "./config/db.js";
-import dns from 'node:dns'; 
-import products from "./models/products.js";
-import productsController from "./controllers/products.js";
+import dns from 'node:dns';
 import productsRouter from "./routers/products.js";
 
 // Declaración de variables
@@ -20,8 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
 connectDB();
 
 // Llamando los metodos de producción
-server.use(express.json());
-server.use('/productos', productsRouter)
+// server.use(express.json());
+// server.use('/productos', productsRouter)
 
 // Metodos para identificar rutas de respuesta
 server.get('/',(req,res)=>{
